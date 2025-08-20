@@ -10,19 +10,11 @@ import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 
 const categorias = [
-  "Camisas",
-  "Camisetas",
-  "Calças",
-  "Shorts",
-  "Vestidos",
-  "Saias",
-  "Blusas",
-  "Casacos",
-  "Calçados",
-  "Acessórios",
+  "Oversized",
+  "Normal",
 ];
 
-const tamanhos = ["PP", "P", "M", "G", "GG", "XGG", "36", "38", "40", "42", "44", "46"];
+const tamanhos = ["P", "M", "G", "GG"];
 
 export default function AdicionarProduto() {
   const { toast } = useToast();
@@ -34,7 +26,6 @@ export default function AdicionarProduto() {
     preco: "",
     estoque: "",
     estoqueMinimo: "",
-    fornecedor: "",
     descricao: "",
   });
 
@@ -76,7 +67,6 @@ export default function AdicionarProduto() {
       preco: "",
       estoque: "",
       estoqueMinimo: "",
-      fornecedor: "",
       descricao: "",
     });
   };
@@ -248,18 +238,6 @@ export default function AdicionarProduto() {
                 </div>
               </div>
 
-              <div>
-                <Label htmlFor="fornecedor" className="text-foreground">
-                  Fornecedor
-                </Label>
-                <Input
-                  id="fornecedor"
-                  value={formData.fornecedor}
-                  onChange={(e) => handleInputChange("fornecedor", e.target.value)}
-                  placeholder="Ex: Confecções ABC"
-                  className="bg-background border-border"
-                />
-              </div>
 
               <div className="pt-4">
                 <Button
